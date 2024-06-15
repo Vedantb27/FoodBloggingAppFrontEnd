@@ -10,13 +10,12 @@ import { SavedBeforeEditCard } from "./SavedBeforeEditCard ";
 export const Admineditcategory = () => {
   const { cards, setCards, originalCards, setOriginalCards } =
     useContext(Admincontext);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [image, setImage] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
   const [showSaveChangeCard, setShowSaveChangeCard] = useState(false);
   const [showFailedSaveCard, setShowFailedSaveCard] = useState(false);
-  const [savedBeforeEditCard, setSavedBeforeEditCard  ] = useState(false);
- 
+  const [savedBeforeEditCard, setSavedBeforeEditCard] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +30,7 @@ export const Admineditcategory = () => {
         }));
         setCards(transformedData);
         setOriginalCards(_.cloneDeep(transformedData)); // Store a deep copy of the original cards
-        console.log("Fetched and transformed data:", transformedData); // This line is for testing
+       
       } catch (error) {
         console.log("error fetching the data", error);
       }
@@ -94,11 +93,11 @@ export const Admineditcategory = () => {
 
   const handleSaveChange = () => {
     // Send the updated cards to the server
-
+   
     axios
       .post("http://localhost:8000/update-json", cards)
       .then((response) => {
-        console.log("http://localhost:3001/update-json:", response.data);
+       
         setShowSaveChangeCard(true);
         // Update the originalCards with a deep clone of the updated cards
         setOriginalCards(_.cloneDeep(cards));
@@ -125,18 +124,12 @@ export const Admineditcategory = () => {
     setCards(_.cloneDeep(originalCards)); // Reset cards to the deep-copied original state
   };
 
-  
-
-
- 
-  
   const handleEditCard = (items, index) => {
     if (_.isEqual(originalCards, cards)) {
       navigate("/Admincardsedit", { state: { items, index } });
     } else {
       setSavedBeforeEditCard(true);
     }
-   
   };
 
   return (
@@ -242,16 +235,20 @@ export const Admineditcategory = () => {
       {showSaveChangeCard && (
         <SaveChangeCard onClose={() => setShowSaveChangeCard(false)} />
       )}
-      {
-        showFailedSaveCard && (
-          <FailedSaveCard onClose ={() => setShowFailedSaveCard(false)} />
-        )
-      }
-      {
-        savedBeforeEditCard && (<SavedBeforeEditCard onClose ={()=>{
-           setSavedBeforeEditCard(false)}} onSave ={()=>{handleSaveChange(); setShowSaveChangeCard() }} />)
-      }
-      
+      {showFailedSaveCard && (
+        <FailedSaveCard onClose={() => setShowFailedSaveCard(false)} />
+      )}
+      {savedBeforeEditCard && (
+        <SavedBeforeEditCard
+          onClose={() => {
+            setSavedBeforeEditCard(false);
+          }}
+          onSave={() => {
+            handleSaveChange();
+            setShowSaveChangeCard();
+          }}
+        />
+      )}
     </div>
   );
 };

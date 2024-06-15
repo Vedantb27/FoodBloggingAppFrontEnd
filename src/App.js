@@ -15,10 +15,10 @@ function App() {
       try {
         const response = await fetch("http://localhost:8000/get-json");
         const data = await response.json();
-        console.log(data)
+       
         // Filter out the ID from the response data
         const filteredData = filterIdFromData(data);
-        console.log("The filtered data is :",filteredData)
+       
         setCategoryData(filteredData);
       } catch (error) {
         console.log("error fetching the data", error);

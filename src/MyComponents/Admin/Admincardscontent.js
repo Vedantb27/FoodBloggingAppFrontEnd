@@ -49,8 +49,7 @@ export const Admincardscontent = () => {
         setCards(transformedData);
         
         const selectedItem = transformedData[categoryIndex].items[itemIndex];
-        console.log("This is an transform data:", transformedData);
-        console.log("This is selectedItem:" ,selectedItem);
+        
         setYoutubeUrl(selectedItem.youtubeUrl);
         setMealDetail(selectedItem.mealDetail);
         setIngredients(selectedItem.ingredients);
@@ -114,7 +113,7 @@ export const Admincardscontent = () => {
 
     
     console.log("This is an updated cards :", updatedCards);
-
+  
     try {
       const response = await axios.post(
         "http://localhost:3001/update-json",
@@ -127,7 +126,7 @@ export const Admincardscontent = () => {
       originalMealDetail.current = _.cloneDeep(editableMealDetail);
       originalIngredients.current = _.cloneDeep(editableIngredients);
       originalYoutubeUrl.current = _.cloneDeep(editableYoutubeUrl);
-      console.log("Data sent successfully");
+      
       setShowSaveChangeCard(true);
     } catch (error) {
       console.log("Error sending data", error);

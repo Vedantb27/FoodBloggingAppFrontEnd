@@ -62,8 +62,7 @@ export const Admincardsedit = () => {
   const handleSaveChange = () => {
     const updatedCards = [...cards];
     
-    console.log("this is updated cards:", updatedCards);
-    console.log("this is ItemCards", ItemCards);
+    
   
     // Ensure items is initialized as an array if it is not already
     if (!Array.isArray(updatedCards[index].items)) {
@@ -88,16 +87,12 @@ export const Admincardsedit = () => {
     });
   
     setCards(updatedCards);
-    debugger;
-    console.log(updatedCards);
+  
   
     axios
       .post("http://localhost:8000/update-json", updatedCards) // Send updatedCards instead of cards
       .then((response) => {
-        console.log(
-          "Data saved successfully on http://localhost:3001/update-json:",
-          response.data
-        );
+    
         setOriginalItems(_.cloneDeep(ItemCards));
         setShowSaveChangeCard(true);
       })
@@ -136,7 +131,7 @@ export const Admincardsedit = () => {
   };
   
 
-  console.log(cards);
+
 
 
   const handleEditCardContent = (card, itemIndex) => {
@@ -149,7 +144,7 @@ export const Admincardsedit = () => {
         },
       });
     } else {
-      console.log(false);
+     
       setSavedBeforeEditCard(true);
     }
     
