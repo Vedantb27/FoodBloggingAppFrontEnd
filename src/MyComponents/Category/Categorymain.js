@@ -2,12 +2,15 @@ import React from "react";
 import { Cards } from "./Cards";
 
 
-export const Categorymain = ({ categoryData }) => {
-  /* JSON Data*/
+export const Categorymain = ({ categoryData , }) => {
 
+  /* JSON Data*/
+ 
+
+    
   return (
     <div className="category  mt-4 flex  ">
-      {/* <Categorylist categoryData={categoryData} />     */}
+     
       <div className="border-6 w-full">
         {Object.keys(categoryData).map((categoryName) => {
           if (categoryData.hasOwnProperty(categoryName)) {

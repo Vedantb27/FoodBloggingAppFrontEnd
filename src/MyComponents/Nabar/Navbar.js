@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState,  useRef } from 'react';
 
 
-export const Navbar = ({setShowLoginForm}) => {
+export const Navbar = ({setShowLoginForm,searchQuery, setSearchQuery }) => {
    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+   
     
     const dropdownRef = useRef(null);
 
@@ -12,32 +12,14 @@ export const Navbar = ({setShowLoginForm}) => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const handleDropdownToggle = () => {
-        setIsDropdownOpen(!isDropdownOpen);
-    };
+   
 
-    const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setIsDropdownOpen(false);
-        }
-    };
-
-    useEffect(() => {
-        if (isDropdownOpen) {
-            document.addEventListener('mousedown', handleClickOutside);
-        } else {
-            document.removeEventListener('mousedown', handleClickOutside);
-        }
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [isDropdownOpen]);
+   
 
     return (
         <nav className="bg-white border-gray-200 border-2 p-2">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
-                <a href='#'
+                <a href='https://www.youtube.com/@nishamadhurimarecipes'
                     
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
@@ -101,6 +83,8 @@ export const Navbar = ({setShowLoginForm}) => {
                             id="search-navbar"
                             className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
                             placeholder="Search..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
                         />
                     </div>
                 </div>
@@ -153,18 +137,13 @@ export const Navbar = ({setShowLoginForm}) => {
                             </a>
                         </li>
                         <li ref={dropdownRef}>
-                            <div onClick={handleDropdownToggle} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 cursor-pointer">
+                            <div  onClick={() => setShowLoginForm(true)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 cursor-pointer">
                                 <div className="flex justify-center ml-20 md:ml-0">
                                     <p className="">Login </p>
                                     <i className="fa-regular fa-circle-user text-[32px] ml-4 font-semibold"></i>
-                                    <i className="fa-solid fa-angle-down ml-4 mt-2"></i>
+                                  
                                 </div>
-                                {isDropdownOpen && (
-                                    <div className="border-2 rounded-xl absolute md:top-20 mt-2 ml-28  w-32 bg-white shadow-lg">
-                                        <p className="text-black px-4 border py-2 hover:bg-gray-100 hover:text-green-400" onClick={() => setShowLoginForm(true)} >User</p>
-                                        <p className="text-black px-4 py-2 hover:bg-gray-100 hover:text-green-400" onClick={() => setShowLoginForm(true)} >Admin</p>
-                                    </div>
-                                )}
+                                
                             </div>
                         </li>
                     </ul>
