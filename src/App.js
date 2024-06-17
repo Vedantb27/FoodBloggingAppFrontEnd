@@ -4,21 +4,23 @@ import { Categorymain } from "./MyComponents/Category/Categorymain";
 import { Corouselnew } from "./MyComponents/Corousel/Corouselnew";
 import { useState, useEffect } from "react";
 import { Loginform } from "./MyComponents/Nabar/Loginform";
+import { NoResultsFound } from "./MyComponents/Category/NoResultsFound";
 
 function App() {
   const [categoryData, setCategoryData] = useState({});
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isEmpty, setIsEmpty] = useState(false);
+  const [originalcategoryData,setOriginalcategoryData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("http://localhost:8000/get-json");
         const data = await response.json();
-        console.log(data);
-        // Filter out the ID from the response data
+        
+         
         const filteredData = filterIdFromData(data);
-
         setCategoryData(filteredData);
       } catch (error) {
         console.log("error fetching the data", error);
@@ -27,7 +29,6 @@ function App() {
     fetchData();
   }, []);
 
-  // Function to recursively filter out the _id field from nested objects
   const filterIdFromData = (data) => {
     const filteredData = {};
     Object.keys(data).forEach((key) => {
@@ -64,7 +65,9 @@ function App() {
   };
 
   const filteredCategoryData = filterData(categoryData, searchQuery);
-  console.log(searchQuery);
+  useEffect(() => {
+    setIsEmpty(Object.keys(filteredCategoryData).length === 0);
+  }, [filteredCategoryData]);
 
   return (
     <div className="App">
@@ -74,8 +77,12 @@ function App() {
         setSearchQuery={setSearchQuery}
       />
       {showLoginForm && <Loginform onClose={() => setShowLoginForm(false)} />}
-      <Corouselnew categoryData={filteredCategoryData} />
-      <Categorymain categoryData={filteredCategoryData} />
+      {!searchQuery && <Corouselnew categoryData={categoryData} />}
+      {isEmpty && searchQuery ? (
+       <NoResultsFound/>
+      ) : (
+        <Categorymain categoryData={filteredCategoryData} />
+      )}
     </div>
   );
 }
