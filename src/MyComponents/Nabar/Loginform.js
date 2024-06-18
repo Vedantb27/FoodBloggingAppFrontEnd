@@ -18,7 +18,7 @@ export const Loginform = ({ onClose }) => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:8000/login", { email, password });
+            const response = await axios.post("https://foodbloggingappbackend.onrender.com/login", { email, password });
             localStorage.setItem("token", response.data.token);
             navigate("/Admineditcategory");
         } catch (error) {

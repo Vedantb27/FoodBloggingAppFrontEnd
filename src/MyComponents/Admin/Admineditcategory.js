@@ -20,7 +20,7 @@ export const Admineditcategory = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/get-json");
+        const response = await fetch("https://foodbloggingappbackend.onrender.com/get-json");
         const data = await response.json();
         const filteredData = filterIdFromData(data);
         const transformedData = Object.keys(filteredData).map((key) => ({
@@ -95,7 +95,7 @@ export const Admineditcategory = () => {
     // Send the updated cards to the server
    
     axios
-      .post("http://localhost:8000/update-json", cards)
+      .post("https://foodbloggingappbackend.onrender.com/update-json", cards)
       .then((response) => {
        
         setShowSaveChangeCard(true);

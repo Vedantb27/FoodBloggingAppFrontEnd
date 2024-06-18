@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/get-json");
+        const response = await fetch("https://foodbloggingappbackend.onrender.com/get-json");
         const data = await response.json();
         
          

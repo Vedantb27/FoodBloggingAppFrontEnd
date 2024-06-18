@@ -27,7 +27,7 @@ export const Admincardsedit = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/get-json");
+      const response = await fetch("https://foodbloggingappbackend.onrender.com/get-json");
       const data = await response.json();
       const filteredData = filterIdFromData(data);
       const transformedData = Object.keys(filteredData).map((key) => ({
@@ -90,7 +90,7 @@ export const Admincardsedit = () => {
   
   
     axios
-      .post("http://localhost:8000/update-json", updatedCards) // Send updatedCards instead of cards
+      .post("https://foodbloggingappbackend.onrender.com/update-json", updatedCards) // Send updatedCards instead of cards
       .then((response) => {
     
         setOriginalItems(_.cloneDeep(ItemCards));
