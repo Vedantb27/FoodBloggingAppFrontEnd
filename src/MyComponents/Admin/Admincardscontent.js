@@ -116,7 +116,7 @@ export const Admincardscontent = () => {
   
     try {
       const response = await axios.post(
-        "http://localhost:3001/update-json",
+        "http://localhost:8000/update-json",
         updatedCards
       );
       console.log(

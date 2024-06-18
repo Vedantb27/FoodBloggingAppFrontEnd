@@ -20,9 +20,9 @@ export const Categorymain = ({ categoryData , }) => {
                   <a id={categoryName}>{categoryName}</a> 
                 </h1>
 
-                <div className="category-cardsilist  flex    ">
+                <div className="category-cardsilist  flex   ">
                   {
-                    <div className="w-full hide-scrollbar  category-cardsilist flex md:flex-wrap  overflow-x-scroll">
+                    <div className="w-full hide-scrollbar  category-cardsilist flex md:flex-wrap  overflow-x-scroll  margin-auto">
                       {" "}
                       {/* remove overflow by using flex-wrap and hide-scrollbar is custom class in index.css to remove scrollbar */}
                       {categoryData[categoryName].items.map((card) => {
