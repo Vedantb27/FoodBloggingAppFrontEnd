@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/FoodBloggingAppFrontEnd/static/css/main.4a43af41.css",
+    "main.js": "/FoodBloggingAppFrontEnd/static/js/main.bad4992f.js",
+    "reactPlayerYouTube.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerYouTube.deab9314.chunk.js",
+    "reactPlayerSoundCloud.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerSoundCloud.0e4ba1bb.chunk.js",
+    "reactPlayerVimeo.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerVimeo.2b7c4767.chunk.js",
+    "reactPlayerMux.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerMux.b1a26588.chunk.js",
+    "reactPlayerFacebook.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerFacebook.4c7328f7.chunk.js",
+    "reactPlayerStreamable.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerStreamable.52813c87.chunk.js",
+    "reactPlayerWistia.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerWistia.c218f05c.chunk.js",
+    "reactPlayerTwitch.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerTwitch.ef5e9e40.chunk.js",
+    "reactPlayerDailyMotion.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerDailyMotion.57f9aec8.chunk.js",
+    "reactPlayerMixcloud.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerMixcloud.23c8583c.chunk.js",
+    "reactPlayerVidyard.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerVidyard.c188044a.chunk.js",
+    "reactPlayerKaltura.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerKaltura.a47f3c81.chunk.js",
+    "reactPlayerFilePlayer.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerFilePlayer.5dd9d3d2.chunk.js",
+    "reactPlayerPreview.js": "/FoodBloggingAppFrontEnd/static/js/reactPlayerPreview.3eb67a05.chunk.js",
+    "static/js/453.68693753.chunk.js": "/FoodBloggingAppFrontEnd/static/js/453.68693753.chunk.js",
+    "index.html": "/FoodBloggingAppFrontEnd/index.html",
+    "main.4a43af41.css.map": "/FoodBloggingAppFrontEnd/static/css/main.4a43af41.css.map",
+    "main.bad4992f.js.map": "/FoodBloggingAppFrontEnd/static/js/main.bad4992f.js.map",
+    "reactPlayerYouTube.deab9314.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerYouTube.deab9314.chunk.js.map",
+    "reactPlayerSoundCloud.0e4ba1bb.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerSoundCloud.0e4ba1bb.chunk.js.map",
+    "reactPlayerVimeo.2b7c4767.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerVimeo.2b7c4767.chunk.js.map",
+    "reactPlayerMux.b1a26588.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerMux.b1a26588.chunk.js.map",
+    "reactPlayerFacebook.4c7328f7.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerFacebook.4c7328f7.chunk.js.map",
+    "reactPlayerStreamable.52813c87.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerStreamable.52813c87.chunk.js.map",
+    "reactPlayerWistia.c218f05c.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerWistia.c218f05c.chunk.js.map",
+    "reactPlayerTwitch.ef5e9e40.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerTwitch.ef5e9e40.chunk.js.map",
+    "reactPlayerDailyMotion.57f9aec8.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerDailyMotion.57f9aec8.chunk.js.map",
+    "reactPlayerMixcloud.23c8583c.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerMixcloud.23c8583c.chunk.js.map",
+    "reactPlayerVidyard.c188044a.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerVidyard.c188044a.chunk.js.map",
+    "reactPlayerKaltura.a47f3c81.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerKaltura.a47f3c81.chunk.js.map",
+    "reactPlayerFilePlayer.5dd9d3d2.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerFilePlayer.5dd9d3d2.chunk.js.map",
+    "reactPlayerPreview.3eb67a05.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/reactPlayerPreview.3eb67a05.chunk.js.map",
+    "453.68693753.chunk.js.map": "/FoodBloggingAppFrontEnd/static/js/453.68693753.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a43af41.css",
+    "static/js/main.bad4992f.js"
+  ]
+}
