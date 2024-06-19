@@ -16,9 +16,10 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        
         const response = await fetch("https://foodbloggingappbackend.onrender.com/get-json");
         const data = await response.json();
-        
+        console.log(data);
          
         const filteredData = filterIdFromData(data);
         setCategoryData(filteredData);
